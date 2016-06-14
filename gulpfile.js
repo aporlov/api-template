@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
     ts = require('gulp-typescript');
+
 var tsProject = ts.createProject("tsconfig.json")
 
 gulp.task("scripts", function () {
@@ -14,12 +15,11 @@ gulp.task('watch', ['scripts'], function() {
 gulp.task('default', function(){
     nodemon({
         script:'dist/main.js',
-        ext:'js',
+        ext:'js ts',
         ignore:['./node_modules/**']
     })
     .on('start', ['watch'])
-    .on('change', ['watch'])
-    .on('restart',function(){
+    .on('restart',['watch'], function(){
         console.log('Restarting');
                   }); 
 

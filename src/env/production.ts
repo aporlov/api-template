@@ -1,5 +1,5 @@
-export default {
+module.exports =  {
 	env: 'development',
 	db: 'mongodb://localhost/prices',
-	port: 5000
+	port: 3000
 };

@@ -1,14 +1,14 @@
 import * as express from  'express';
 import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
-import route from './route';
+import {default as price} from './api/price';
 const app = express();
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
-app.use('/api', route);
+app.use('/api/price', price);
 
 app.get('/', (req,res)=>{
     res.send('welcome to my API');
