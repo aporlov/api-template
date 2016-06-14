@@ -6,4 +6,4 @@ router.get('/price', function(req, res, next) {
   res.send('price');
 });
 
-export = router;
+export default router;
