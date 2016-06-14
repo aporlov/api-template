@@ -4,6 +4,7 @@
     "mongoose": "registry:npm/mongoose#4.3.5+20160531094808"
   },
   "globalDependencies": {
+    "body-parser": "registry:dt/body-parser#0.0.0+20160317120654",
     "dotenv": "registry:dt/dotenv#2.0.0+20160327131627",
     "express": "registry:dt/express#4.0.0+20160317120654",
     "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160602151406",

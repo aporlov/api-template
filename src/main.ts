@@ -1,25 +1,15 @@
-import {config} from 'dotenv';
-import * as express from  'express';
 import * as  mongoose from 'mongoose';
-import * as morgan form 'morgan';
-config();
-const db = mongoose.createConnection('mongodb://localhost/prices');
-const app = express();
-const port = process.env.PORT || 3000;
+import app from './express';
+import config from './env';
 
-
-app.get('/', (req,res)=>{
-    res.send('welcome to my API');
+mongoose.connect(config.db, { server: { socketOptions: { keepAlive: 1 } } });
+mongoose.connection.on('error', () => {
+	throw new Error(`unable to connect to database: ${config.db}`);
 });
 
-app.get('*', (req, res)=>{
-  res.status(404).send();
+app.listen(config.port, ()=>{
+    console.log('Running on PORT:' + config.port);
 });
 
-
-
-app.listen(port, ()=>{
-    console.log('Running on PORT:' + port);
-});
-
-exports.app = app;
+//exports.app = app;
+export default app;
