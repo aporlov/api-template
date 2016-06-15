@@ -1,5 +1,5 @@
 module.exports =  {
-	env: 'development',
+	env: 'production',
 	db: 'mongodb://localhost/prices',
 	port: 3000
 };
