@@ -4,22 +4,25 @@
   "description": "REST API",
   "main": "./dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./test/test.js | tap-spec"
   },
   "author": "Orlov Alexey",
   "license": "ISC",
   "dependencies": {
+    "basic-auth": "^1.0.4",
     "body-parser": "^1.15.1",
-    "dotenv": "^2.0.0",
     "express": "^4.13.4",
     "mongoose": "^4.4.19",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "pwd": "^1.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-nodemon": "^2.0.7",
     "gulp-typescript": "^2.13.6",
     "supertest": "^1.2.0",
+    "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   }
 }

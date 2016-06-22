@@ -7,7 +7,7 @@ mongoose.connection.on('error', () => {
 	throw new Error(`unable to connect to database: ${config.db}`);
  });
 app.listen(config.port, ()=>{
-    console.log('Running on PORT:' + config.port);
+    console.log('Running on PORT::::' + config.port);
 });
 
 exports.app = app;

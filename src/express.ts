@@ -1,16 +1,20 @@
 import * as express from  'express';
 import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
-import {default as apiprice} from './controllers/api-price';
+import {default as apiPrice } from './controllers/api-price';
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
-app.use('/api/price', apiprice);
+
+var User = require('./models/user');
+
+//  PRICE
+app.use('/api/price', apiPrice );
 
 app.get('/', (req,res)=>{
-    res.send('welcome to my API');
+    res.send('welcome to my AP');
 });
 
 app.get('*', (req, res)=>{
