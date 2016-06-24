@@ -1,7 +1,7 @@
 import * as express from 'express';
 import {default as auth} from '../lib/basicauth';
-const router = express.Router();
-const User = require('../models/user');
+var router = express.Router();
+var User = require('../models/user');
 
 /* /api/price */
 router.use(auth);

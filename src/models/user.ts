@@ -2,9 +2,9 @@
 User model.
 */
 import {Hash} from '../lib/hash';
-const mongoose = require('mongoose') ; // 
-const hash = new Hash();
-const Schema = mongoose.Schema;
+var mongoose = require('mongoose') ; // 
+var hash = new Hash();
+var Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     name: {

@@ -1,15 +1,15 @@
 /*
 Middleware for basic authentication 
 */
-const basicAuth = require('basic-auth');
-const User = require('../models/user');
+var basicAuth = require('basic-auth');
+var User = require('../models/user');
 
-const auth =  (req, res, next) => {
+var auth =  (req, res, next) => {
   function unauthorized(res) {
     res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
     return  res.sendStatus(401);
   };
-  const basic = basicAuth(req);
+ var basic = basicAuth(req);
   if (!basic) {  unauthorized(res);}
   User.findOne({
       'name':  basic.name

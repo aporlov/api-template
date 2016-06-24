@@ -3,7 +3,7 @@ Class for implementing IHash interface with npm module 'pwd'
 Result hash string  is  hashsalt:hashpassword
 */
 import {iHash } from './interfaces';
-const pass = require('pwd');
+var pass = require('pwd');
 
 export class Hash implements iHash{ 
 create(hashPassword:string, cb):void {

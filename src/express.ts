@@ -2,7 +2,7 @@ import * as express from  'express';
 import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import {default as apiPrice } from './controllers/api-price';
-const app = express();
+var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
